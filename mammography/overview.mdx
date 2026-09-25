@@ -1,7 +1,7 @@
 ---
-title: "Mammography Referral Management in SIGAS"
+title: "Mammography Referral Tracking — SIGAS Overview"
 sidebarTitle: "Overview"
-description: "SIGAS tracks external mammography referrals separately from regular appointments, with a dedicated status workflow to monitor each patient's progress through screening."
+description: "Monitor every external mammography referral your health center creates, track progress through three status stages, and update records instantly from one screen."
 ---
 
 The Mamografías module gives you a centralized view of every external mammography referral your health center has created. Because mammography exams take place outside your facility, SIGAS tracks them in a dedicated referral list — completely separate from the clinical box schedule — so you always know where each patient stands in the screening process.
@@ -17,13 +17,13 @@ This separation keeps your internal schedule clean while ensuring that referred 
 Each mammography referral is assigned one of three statuses. Update the status as the referral progresses to keep the tracker accurate.
 
 <CardGroup cols={3}>
-  <Card title="⏳ Lista de Espera" icon="clock">
-    The referral has been created in SIGAS and the patient is waiting. No contact with the external center has been made yet. This is the default status when a referral is first saved.
+  <Card title="⏳ Lista de Espera" icon="clock" href="/mammography/referral-workflow">
+    The referral has been created and the patient is waiting. No contact with the external center has been made yet. This is the default status when a referral is first saved.
   </Card>
-  <Card title="📩 Solicitada" icon="envelope">
+  <Card title="📩 Solicitada" icon="envelope" href="/mammography/referral-workflow">
     The referral has been formally requested to the external center. Your team has communicated the need, but an appointment date has not yet been confirmed.
   </Card>
-  <Card title="✅ Agendada" icon="calendar-check">
+  <Card title="✅ Agendada" icon="calendar-check" href="/mammography/referral-workflow">
     The mammography appointment has been confirmed at the external facility. The patient has a scheduled date for their exam.
   </Card>
 </CardGroup>
@@ -83,7 +83,7 @@ You can change a referral's status directly from the table without opening a sep
 </Steps>
 
 <Note>
-  Status changes are recorded in the audit log with action type **MAMOGRAFIA** so you can track when each status was updated and by whom.
+  Every status change is recorded in the audit log so your team can always see when a referral was updated and by whom.
 </Note>
 
 ---

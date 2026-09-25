@@ -1,7 +1,7 @@
 ---
 title: "Specialist Management: Add and Configure Care Providers"
 sidebarTitle: "Specialists"
-description: "Add, edit, and deactivate specialist profiles in SIGAS, assign care types they can provide, and manage their profile information and photos."
+description: "Add, edit, and remove specialist profiles in SIGAS, assign the care types each specialist covers, and manage their contact details and profile photos."
 ---
 
 The Specialists module lets you manage the healthcare professionals available for appointment scheduling in your health center. Each specialist is linked to one or more **care types** (tipos de atención), and SIGAS uses those assignments to determine which specialists appear in the scheduling form when a particular care type is selected. Keeping this list accurate ensures that every care type can always be booked.
@@ -19,26 +19,10 @@ Each specialist profile contains the following information:
 | Field | Description |
 |-------|-------------|
 | **RUT** | Chilean national identity number — the specialist's unique identifier in the system |
-| **Full name** (`nombre`) | The specialist's complete name as it will appear in appointment records |
-| **Title / Role** (`cargo_título`) | The specialist's professional title or role (e.g., *Médico Cirujano*, *Enfermera*, *Psicóloga*) |
-| **Profile photo** | An optional circular profile photo uploaded and cropped in-browser |
-| **Assigned care types** | The list of care types this specialist can attend — at least one is required |
-
----
-
-## Active Specialists in the System
-
-SIGAS is preconfigured for the following specialist roles. Your health center may have multiple individuals in the same role, each with their own profile:
-
-| Role | Care Types Covered |
-|------|--------------------|
-| **Enfermera** (Nurse) | Toma de Muestras, EMP |
-| **Dentista** | Dental |
-| **Médico** | Morbilidad, Certificados |
-| **Psiquiatra / Psicóloga** | Salud Mental USIT |
-| **Kinesiólogo** | Kinesiología |
-
-These roles and care types reflect the default configuration. You can add specialists with any title and assign any combination of care types to match your health center's structure.
+| **Nombre** | The specialist's full name as it appears in appointment records |
+| **Cargo / Especialidad / Título** | The specialist's professional title or role (e.g., *Médico Cirujano*, *Enfermera*, *Psicóloga*) |
+| **Foto de Perfil** | An optional circular profile photo uploaded and cropped in-browser |
+| **Tipos de Consulta que Atiende** | The care types this specialist can attend — at least one is required |
 
 ---
 
@@ -52,13 +36,13 @@ These roles and care types reflect the default configuration. You can add specia
     Click the **+ Nuevo Especialista** button in the top-right corner. The Add Specialist form opens.
   </Step>
   <Step title="Enter the specialist's details">
-    Fill in the specialist's **RUT** (format: `12.345.678-9`), **full name**, and **title/role** (cargo / especialidad / título). All three fields are required.
+    Fill in the specialist's **RUT** (format: `12.345.678-9`), **full name**, and **Cargo / Especialidad / Título**. All three fields are required.
   </Step>
   <Step title="Select care types">
     In the **Tipos de Consulta que Atiende** section, check every care type this specialist can provide. You must select at least one — saving without a care type is not allowed.
   </Step>
   <Step title="Upload a profile photo (optional)">
-    Click **Choose File** under Foto de Perfil, select an image from your computer, then use the circular crop tool to frame the photo. Click **Aplicar Recorte** to confirm the framing. If you skip this step, a placeholder avatar showing the specialist's initial is displayed instead.
+    Click **Choose File** under **Foto de Perfil**, select an image from your computer, then use the circular crop tool to frame the photo. Click **Aplicar Recorte** to confirm the framing. If you skip this step, a placeholder avatar showing the specialist's initial is displayed instead.
   </Step>
   <Step title="Click Guardar">
     Click **Guardar** to save the profile. The specialist is immediately available in the scheduling form for any care type you assigned.
@@ -86,7 +70,7 @@ Leave the photo field unchanged to keep the existing image. Click **Guardar** to
 To remove a specialist from the system, open their profile popup and click **Eliminar**. You will be prompted to enter your administrator password to confirm.
 
 <Warning>
-  Deleting a specialist requires your administrator password and is permanent. The action is recorded in the audit log. Past appointments that referenced this specialist retain their data and display the specialist's name as it was at the time of the appointment — only future scheduling is affected.
+  Deleting a specialist requires your administrator password and is permanent. The action is recorded in the audit log. Past appointments that referenced this specialist retain their data — only future scheduling is affected.
 </Warning>
 
 Enter your password and click **Confirmar Baja**. The specialist is removed and the page reloads.
@@ -95,7 +79,7 @@ Enter your password and click **Confirmar Baja**. The specialist is removed and 
 
 ## Care Type Assignment
 
-Care type assignment is the link between a specialist and the scheduling system. When an administrator opens the scheduling form and selects a care type, SIGAS queries which specialists have that care type assigned and shows only those names in the specialist dropdown.
+Care type assignment is the link between a specialist and the scheduling system. When an administrator opens the scheduling form and selects a care type, SIGAS shows only the specialists who have that care type assigned.
 
 This means:
 
@@ -106,5 +90,12 @@ This means:
 Always review care type assignments after adding a new specialist or when staff responsibilities change.
 
 <Note>
-  Specialists are linked to specific care types. If no specialist is assigned to a care type, that care type cannot be scheduled. Ensure at least one specialist is always assigned to every active care type in your health center.
+  If no specialist is assigned to a care type, that care type cannot be scheduled. Ensure at least one specialist is always assigned to every active care type in your health center.
 </Note>
+
+---
+
+## Related Pages
+
+- [Schedule a Patient](/scheduling/schedule-patient) — book appointments using the specialists configured here
+- [Administrators](/admin/administrators) — manage who has access to configure specialists

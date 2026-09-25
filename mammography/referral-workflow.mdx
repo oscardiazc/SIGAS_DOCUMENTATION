@@ -1,7 +1,7 @@
 ---
-title: "Creating and Managing Mammography Referrals"
+title: "How to Create and Manage Mammography Referrals"
 sidebarTitle: "Referral Workflow"
-description: "Learn how to create a mammography referral from the scheduling form, track it through the three-stage workflow, and close it once the exam is confirmed."
+description: "Step-by-step guide to creating a mammography referral from the scheduling form, tracking it through three stages, and closing it once the exam is confirmed."
 ---
 
 When a patient needs an external mammography exam, you create the referral directly from the standard scheduling form — the same form you use for regular appointments. SIGAS detects that it is a mammography referral and saves it to the dedicated tracker without touching the box schedule. From there, you advance the referral through three stages until the patient has a confirmed appointment at the external facility.
@@ -21,7 +21,7 @@ When a patient needs an external mammography exam, you create the referral direc
     - **Teléfono** — Required contact number.
     - **Correo Electrónico** *(optional)* — Patient's email address.
     - **Sección / Unidad** — The section or unit the patient belongs to.
-    - **Previsión** — Select the patient's insurance type: FONASA A–D, ISAPRE, CAPREDENA, DIPRECA, or PARTICULAR.
+    - **Previsión** — Select the patient's insurance type: FONASA A, FONASA B, FONASA C, FONASA D, ISAPRE, CAPREDENA, DIPRECA, or PARTICULAR.
   </Step>
   <Step title="Check the mammography checkbox">
     In the shaded panel below the patient fields, check the box labelled:
@@ -31,7 +31,7 @@ When a patient needs an external mammography exam, you create the referral direc
     Checking this option tells SIGAS that this is an external referral, not a clinical appointment. The box-assignment and time-slot fields are automatically hidden.
   </Step>
   <Step title="Click Guardar Cita">
-    Click the **Guardar Cita** button at the bottom of the form. SIGAS saves the referral record in the `mamografias` table and logs a **DERIVACION** audit entry — without reserving any clinical box or time slot.
+    Click the **Guardar Cita** button at the bottom of the form. SIGAS saves the referral and logs it in the audit trail — without reserving any clinical box or time slot.
   </Step>
 </Steps>
 
@@ -66,7 +66,7 @@ SIGAS stores the following information for every mammography referral:
 <Accordion title="View all recorded fields">
   | Field | Description |
   |---|---|
-  | **Date of referral creation** | The calendar date on which the referral was saved (`fecha_derivacion`). |
+  | **Date of referral creation** | The calendar date on which the referral was saved. |
   | **Patient RUT** | The unique national identification number for the patient. |
   | **Folio** *(optional)* | An optional reference number linking to external paperwork or a physical file. |
   | **Full patient name** | First name and last name as entered in the scheduling form. |
@@ -107,5 +107,5 @@ Every mammography referral follows a four-step lifecycle from creation to confir
 ---
 
 Related pages:
-- [Mammography Referral Management — Overview](/mammography/overview)
+- [Mammography Referral Tracking — Overview](/mammography/overview)
 - [Patient Administration](/admin/patients)

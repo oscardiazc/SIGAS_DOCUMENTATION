@@ -1,7 +1,7 @@
 ---
-title: "Reserve a Box or Room for Internal Use"
+title: "Reserving a Clinical Box for Internal Use in SIGAS"
 sidebarTitle: "Box Reservation"
-description: "Block a clinical box in SIGAS for internal meetings, training sessions, or room usage without assigning it to a patient appointment."
+description: "Block a clinical box in SIGAS for internal use — meetings, maintenance, or training — without linking the reservation to any patient appointment."
 ---
 
 SIGAS allows you to reserve a clinical box directly — without linking the reservation to any patient record. This is useful whenever a room needs to be taken offline from the patient scheduling queue for operational reasons, such as a staff meeting, equipment maintenance, or a training session. The reservation appears on the dashboard in dark gray so all administrators can see the block at a glance.
@@ -19,8 +19,11 @@ Use a box reservation instead of a patient appointment when the room is needed f
 ## Reserving a Box
 
 <Steps>
-  <Step title="Navigate to Box Scheduling">
-    Click **+ Agendar Box** in the top-right corner of the dashboard, or open the **Agendar** menu in the top navigation and select **Agendar Box**. The box reservation form opens with today's date pre-filled.
+  <Step title="Open the box reservation form">
+    Click **+ Agendar Box** in the top-right corner of the dashboard. The box reservation form opens with today's date pre-filled.
+  </Step>
+  <Step title="Enter the Responsible Party">
+    Type the full name of the person or team responsible for the room usage into the **Nombre Completo** field. This name is stored with the reservation record and appears in the audit log.
   </Step>
   <Step title="Select a Box">
     Open the **Box Clínico / Sala** dropdown and choose the clinical box you want to reserve. All five active boxes are listed:
@@ -31,25 +34,22 @@ Use a box reservation instead of a patient appointment when the room is needed f
     - Box Salud Mental
     - Box Rehabilitación
   </Step>
-  <Step title="Enter the Responsible Party">
-    Type the full name of the person or team responsible for the room usage into the **Nombre Completo** field. This name is stored with the reservation record and appears in the audit log.
-  </Step>
   <Step title="Set Date and Duration">
-    Confirm or change the **Fecha** using the date picker. Then select the number of hours you need from the **Horas de Uso** dropdown (1, 2, 3, or 4 hours). Once you set the box, date, and duration, the **Horarios Libres Disponibles** dropdown loads all contiguous free blocks that match your requested duration for that day.
+    Confirm or change the **Fecha** using the date picker. Then select the number of hours you need from the **Horas de Uso** dropdown — options are 1, 2, 3, or 4 hours. Once you set the box, date, and duration, the **Horarios Libres Disponibles** dropdown loads all contiguous free blocks that match your requested duration for that day.
   </Step>
-  <Step title="Save the Reservation">
-    Select a time block from **Horarios Libres Disponibles** and click **Confirmar Reserva de Sala**. The system performs a final conflict check. If the slot is still free, the reservation is saved immediately and you are redirected to the dashboard, where the block appears in dark gray under the reserved box column.
+  <Step title="Select a Time Block and Confirm">
+    Choose a time block from the **Horarios Libres Disponibles** dropdown, then click **Confirmar Reserva de Sala**. The system performs a final conflict check. If the slot is still free, the reservation is saved and you are redirected to the dashboard, where the block appears in dark gray under the reserved box column.
   </Step>
 </Steps>
 
 ## Time Conflict Check
 
-SIGAS prevents double-booking at the box level. Before saving, it checks whether any confirmed appointment — patient or reservation — already occupies any portion of your requested time window in the same box. If a conflict exists, the conflicting slot does not appear in the **Horarios Libres Disponibles** dropdown at all, so you will only ever see genuinely available blocks. If no contiguous free blocks match your requested duration, the dropdown displays the message *No hay bloques contiguos libres* — in that case, try a shorter duration or a different date.
+SIGAS prevents double-booking at the box level. Before displaying options, it checks whether any confirmed appointment — patient or reservation — already occupies any portion of the requested time window in the same box. Only genuinely free contiguous blocks are shown in the **Horarios Libres Disponibles** dropdown. If no contiguous free blocks match the requested duration, the dropdown displays *No hay bloques contiguos libres* — in that case, try a shorter duration or a different date.
 
 <Note>
-  Box reservations appear on the dashboard grid with a dark gray color (Reserva de Sala, `#4A5568`) to visually distinguish them from patient appointments. The responsible party's name is displayed inside the block.
+  Box reservations appear on the dashboard grid with a dark gray color (`#4A5568`) to visually distinguish them from patient appointments. The responsible party's name is displayed inside the block.
 </Note>
 
 <Warning>
-  Box reservations are not linked to a patient. They do not appear in the attendance history or in any patient record. If you need to track the usage for reporting purposes, use the audit log, where the action is recorded under the `RESERVA_SALA` code.
+  Box reservations are not linked to any patient record and do not appear in the attendance history. To review reservation activity for reporting purposes, check the audit log — each reservation is recorded under the action code `RESERVA_SALA`.
 </Warning>

@@ -1,5 +1,5 @@
 ---
-title: "SIGAS: Health Center Management Platform"
+title: "Introduction to SIGAS — What It Does and Who It's For"
 sidebarTitle: "Introduction"
 description: "Learn what SIGAS is, who it's for, and how it helps health centers manage appointments, clinical boxes, mammography referrals, and administrative records."
 ---
@@ -8,29 +8,29 @@ SIGAS (Sistema de Gestión de Atención de Salud) is the central platform for ma
 
 ## What is SIGAS?
 
-SIGAS is a PHP web application designed for health center administrators who need to coordinate patient appointments and manage day-to-day clinical operations. Rather than juggling spreadsheets or paper-based schedules, administrators use SIGAS to view real-time box occupancy, schedule patients into the right care slot, track specialist schedules, and produce a reliable record of everything that happens in the system.
+SIGAS is a web application designed for health center administrators who need to coordinate patient appointments and manage day-to-day clinical operations. Rather than juggling spreadsheets or paper-based schedules, administrators use SIGAS to view real-time box occupancy, schedule patients into the right care slot, track specialist schedules, and produce a reliable record of everything that happens in the system.
 
 SIGAS is accessed entirely through a web browser — no installation is required on individual workstations. All data is stored centrally, so every administrator with an account sees the same up-to-date information.
 
 ## Key features
 
 <CardGroup cols={2}>
-  <Card title="Daily Box Dashboard" icon="grid-2">
+  <Card title="Daily Box Dashboard" icon="grid-2" href="/dashboard">
     A real-time occupancy grid shows all five clinical boxes and every time slot from 08:00 to 17:00. Color-coded appointment blocks let you see what's booked and what's free instantly.
   </Card>
-  <Card title="Patient Scheduling" icon="calendar-plus">
+  <Card title="Patient Scheduling" icon="calendar-plus" href="/scheduling/schedule-patient">
     Schedule patient appointments by care type. The system auto-assigns the correct clinical box and flags scheduling conflicts before they're saved.
   </Card>
-  <Card title="Box Reservation" icon="door-open">
+  <Card title="Box Reservation" icon="door-open" href="/scheduling/schedule-box">
     Reserve an entire clinical box or room for internal use — such as meetings or equipment maintenance — without creating a patient appointment.
   </Card>
-  <Card title="Mammography Referral Tracking" icon="notes-medical">
+  <Card title="Mammography Referral Tracking" icon="notes-medical" href="/mammography/overview">
     Register mammography referrals, record their status, and follow up with patients — all from a dedicated referral management view.
   </Card>
-  <Card title="Attendance History" icon="clock-rotate-left">
+  <Card title="Attendance History" icon="clock-rotate-left" href="/admin/attendance-history">
     Browse the complete history of scheduled appointments, including past cancellations and attendance records, filtered by date or patient.
   </Card>
-  <Card title="Audit Trail" icon="shield-check">
+  <Card title="Audit Trail" icon="shield-check" href="/admin/audit-log">
     Every action taken by every administrator is logged with a timestamp and username. Use the audit log to review changes, resolve disputes, and meet compliance requirements.
   </Card>
 </CardGroup>
@@ -43,18 +43,18 @@ Access to SIGAS requires an administrator account. Accounts are created and mana
 
 ## Care types
 
-SIGAS supports the following appointment types. Each care type has a fixed duration and is assigned to a specific clinical box.
+SIGAS supports the following appointment types. Each care type has a fixed duration that determines how much time is blocked on the schedule.
 
-| Care type | Duration | Assigned box |
-|---|---|---|
-| Toma de Muestras | 10 min | Box Procedimientos |
-| EMP | 30 min | Box Procedimientos |
-| Dental | 60 min | Box Dental |
-| Morbilidad | 20 min | Box Médico |
-| Certificados | 10 min | Box Médico |
-| Salud Mental USIT | 60 min | Box Salud Mental |
-| Kinesiología | 30 min | Box Rehabilitación |
-| Reserva de Box / Sala | 60 min | Internal use |
+| Care type | Duration |
+|---|---|
+| Toma de Muestras | 10 min |
+| EMP | 30 min |
+| Dental | 60 min |
+| Morbilidad | 20 min |
+| Certificados | 10 min |
+| Salud Mental USIT | 60 min |
+| Kinesiología | 30 min |
+| Reserva de Box / Sala | 60 min |
 
 ## Clinical boxes
 

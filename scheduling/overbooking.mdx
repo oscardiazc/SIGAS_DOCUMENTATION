@@ -1,7 +1,7 @@
 ---
 title: "Schedule Appointments with Overbooking (Sobrecupo)"
 sidebarTitle: "Overbooking"
-description: "Use SIGAS's sobrecupo feature to schedule additional patients in already-occupied time slots when clinical demand exceeds normal capacity."
+description: "Enable sobrecupo in SIGAS to book patients into already-occupied time slots when demand exceeds normal capacity, with full audit trail support."
 ---
 
 SIGAS supports **sobrecupo** (overbooking), which allows you to schedule a patient appointment in a time slot that is already occupied by another appointment in the same box. Under normal conditions, occupied slots are hidden from the time slot dropdown — sobrecupo overrides this filter so that all slots, free and occupied, become selectable. This gives administrators the flexibility to respond to clinical demand without restructuring the existing schedule.
@@ -23,29 +23,33 @@ Sobrecupo is intended for situations where clinical demand exceeds normal schedu
 
 <Steps>
   <Step title="Open the patient scheduling form">
-    Navigate to **Agendar → Agendar Pacientes** from the top navigation, or click **+ Agendar Paciente** on the dashboard. The standard scheduling form opens.
+    Click **+ Agendar Paciente** on the dashboard. The standard scheduling form opens.
   </Step>
   <Step title="Fill in all patient data and appointment settings">
     Complete the **Datos del Paciente** section with the patient's RUT, name, phone, section/unit, and previsión. Then select the **Tipo de Atención**, confirm the automatically assigned box, choose the **Especialista**, and set the **Fecha**.
   </Step>
   <Step title="Check the 'Habilitar Sobrecupo' checkbox">
-    Locate the **Habilitar Sobrecupo** checkbox highlighted in red inside the form. Check it to enable overbooking mode. The **Bloque Horario Disponible** dropdown refreshes immediately and now shows all time slots for the selected box and date — including those already occupied. Occupied slots are displayed in red text and labeled **[Ocupado - SOBRECUPO]** so you can distinguish them from free slots.
+    Locate the **Habilitar Sobrecupo (Permite seleccionar y agendar en horarios ya ocupados)** checkbox, displayed with a red background inside the form. Check it to enable overbooking mode. The **Bloque Horario Disponible** dropdown refreshes immediately and now shows all time slots for the selected box and date — including those already occupied. Occupied slots are displayed in red text and labeled **[Ocupado - SOBRECUPO]** so you can distinguish them from free slots.
   </Step>
   <Step title="Select the desired time slot">
     Choose the time slot from the **Bloque Horario Disponible** dropdown. You may select any slot — free or occupied. The slot label confirms whether it overlaps with an existing appointment.
   </Step>
   <Step title="Click 'Guardar Cita'">
-    Click **Guardar Cita** to save the appointment. SIGAS records the appointment with the `es_sobrecupo` flag set and logs the action under `CITA_SOBRECUPO` in the audit log. You are redirected to the dashboard, where the new appointment block appears in the box column at the selected time.
+    Click **Guardar Cita** to save the appointment. The appointment is recorded with the sobrecupo flag and the action is logged as `CITA_SOBRECUPO` in the audit log. You are redirected to the dashboard, where the new appointment block appears in the box column at the selected time.
   </Step>
 </Steps>
 
-## How Sobrecupo Appears
+## How Sobrecupo Appears on the Dashboard
 
 Sobrecupo appointments are visually identical to regular appointments on the dashboard grid — they use the same care-type color and display the patient's name. The sobrecupo flag is recorded at the data level and surfaces in two places:
 
-- **Attendance history** — sobrecupo appointments are marked with a **Sobrecupo** badge (red) so clinical staff reviewing the record can identify that the appointment was booked outside normal capacity rules.
+- **Attendance history** — sobrecupo appointments are marked with a **Sobrecupo** badge so clinical staff can identify that the appointment was booked outside normal capacity rules.
 - **Audit log** — the action is stored as `CITA_SOBRECUPO`, including the administrator's identity, the patient's RUT, the box, and the date and time of the appointment.
 
 <Tip>
-  Sobrecupo does not physically move or modify existing appointments — both the original appointment and the overbooking appointment coexist independently in the same time slot. Neither record is aware of the other at the data level; managing the clinical workflow for overlapping appointments is the responsibility of the attending staff.
+  Sobrecupo does not physically move or modify existing appointments — both the original appointment and the overbooking appointment coexist independently in the same time slot. Managing the clinical workflow for overlapping appointments is the responsibility of the attending staff.
 </Tip>
+
+---
+
+To schedule a standard appointment without overbooking, see [Schedule a Patient Appointment](/scheduling/schedule-patient). To view the dashboard and existing appointments, see [Dashboard](/dashboard).

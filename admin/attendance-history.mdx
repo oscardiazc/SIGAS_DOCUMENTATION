@@ -1,7 +1,7 @@
 ---
 title: "Attendance History: Filter and Review Past Appointments"
 sidebarTitle: "Attendance History"
-description: "Search and filter the complete SIGAS appointment history by date range, clinical box, or patient RUT to review past attendance and generate reports."
+description: "Filter the complete SIGAS appointment history by date range, box, or patient RUT to review past attendance records and monitor clinical activity."
 ---
 
 The Attendance History module gives you a complete, filterable record of every confirmed appointment ever scheduled in SIGAS. Use it to review what happened on a specific day, produce monthly statistics for a clinical box, or look up the appointment history for a specific patient. Unlike the patient-level view (which focuses on one person), this page shows all appointments across all boxes and all patients within the filters you apply.
@@ -19,11 +19,11 @@ Every row in the attendance table represents a single confirmed appointment. The
 | Column | Description |
 |--------|-------------|
 | **Fecha** | The appointment date in `DD/MM/YYYY` format |
-| **Horario** | The start and end times of the appointment slot (e.g., `08:40 – 08:50`) |
+| **Horario** | The start and end times of the appointment slot (e.g., `08:40 - 08:50`) |
 | **Box** | The clinical box number where the appointment was held |
 | **Paciente** | The patient's full name, RUT, and phone number |
-| **Tipo Atención** | The care type, shown with a colour-coded dot matching the box schedule colours |
-| **Unidad / Previsión** | The patient's section/unit and insurance type |
+| **Tipo Atención** | The care type, shown with a colour-coded indicator matching the schedule colours |
+| **Unidad / Previsión** | The patient's section or unit and their insurance type |
 | **Condición** | Whether the appointment was a regular booking or an overbooking — see below |
 
 ---
@@ -41,13 +41,13 @@ Every row in the attendance table represents a single confirmed appointment. The
     Click the **Hasta** date field and select the end of your desired date range.
   </Step>
   <Step title="Optionally select a Box">
-    Use the **Box** dropdown to narrow results to a single clinical box. Leave it set to **Todos los Boxes** to see appointments across all boxes.
+    Use the **Box** dropdown to narrow results to a single clinical box (Box 1 through Box 5). Leave it set to **Todos los Boxes** to see appointments across all boxes.
   </Step>
   <Step title="Optionally enter a patient RUT">
-    Type a patient's RUT into the **RUT Paciente** field to filter results to that individual. Partial RUTs are supported (e.g., entering `12345` will match any RUT containing that sequence).
+    Type a patient's RUT into the **RUT Paciente** field to filter results to that individual. Partial RUTs are supported — entering `12345` will match any RUT containing that sequence.
   </Step>
   <Step title="Click Filtrar">
-    Click the **Filtrar** button to apply your filters. The table updates immediately to show only records matching your criteria.
+    Click the **Filtrar** button to apply your filters. The table updates to show only records matching your criteria.
   </Step>
   <Step title="Click Limpiar to reset">
     Click **Limpiar** to clear all active filters and return to the default view — the current month, all boxes, all patients.
@@ -55,7 +55,7 @@ Every row in the attendance table represents a single confirmed appointment. The
 </Steps>
 
 <Tip>
-  To generate a monthly report for a specific box, set **Desde** to the first day of the month and **Hasta** to the last day, then select the box from the dropdown. The resulting table gives you a complete per-box attendance record ready for manual review or copy-paste into a report.
+  To generate a monthly report for a specific box, set **Desde** to the first day of the month and **Hasta** to the last day, then select the box from the dropdown. The resulting table gives you a complete per-box attendance record for that period.
 </Tip>
 
 ---
@@ -69,10 +69,10 @@ The **Condición** column shows how each appointment was booked:
 | **Normal** | Green | A standard appointment scheduled within the regular time-slot grid |
 | **Sobrecupo** | Red | An overbooking appointment added on top of an already-occupied slot, used when a patient needs to be seen outside normal capacity |
 
-Sobrecupo appointments are visually distinct in the scheduling grid and are tracked separately here so you can monitor how frequently overbooking is used.
+Sobrecupo appointments are tracked separately here so you can monitor how frequently overbooking is used.
 
 <Note>
-  The history only shows appointments with status **confirmada**. Appointments that were deleted after being scheduled do not appear in this view. To investigate deletions, refer to the Audit Log.
+  The history only shows confirmed appointments. Appointments that were deleted after being scheduled do not appear in this view. To investigate deletions, refer to the Audit Log.
 </Note>
 
 ---
@@ -80,3 +80,4 @@ Sobrecupo appointments are visually distinct in the scheduling grid and are trac
 ## Related Pages
 
 - [Audit Log](/admin/audit-log) — track which administrator scheduled or deleted specific appointments
+- [Patients](/admin/patients) — view appointment history for a specific individual

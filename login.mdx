@@ -1,5 +1,5 @@
 ---
-title: "Log In to SIGAS"
+title: "Log In to SIGAS — Access and Session Management"
 sidebarTitle: "Login"
 description: "Access your SIGAS health center management account using your administrator RUT and password. Learn how sessions work and what to do if you're locked out."
 ---
@@ -38,12 +38,11 @@ Your account is created by another administrator — you cannot self-register.
 
 ## Session management
 
-SIGAS uses PHP server-side sessions to keep you authenticated while you work. Here's what you need to know:
+SIGAS keeps you authenticated while you work. Here's what you need to know:
 
 - **Logging out** — click **Panel Admin → Cerrar Sesión** in the top navigation bar. This ends your session immediately and returns you to the login page.
 - **Closing your browser** — closing the browser window or tab ends your session. The next time you open SIGAS you'll need to log in again.
-- **Automatic expiry** — sessions expire automatically after a period of inactivity for security. If SIGAS redirects you to the login page unexpectedly, your session has expired — simply log in again.
-- **Concurrent sessions** — avoid logging in from multiple browser tabs simultaneously, as this can cause unexpected session behavior.
+- **Session expiry** — sessions expire automatically after a period of inactivity for security. If SIGAS redirects you to the login page unexpectedly, your session has expired — simply log in again.
 
 ## Forgotten password
 
@@ -69,5 +68,5 @@ See [Administrators](/admin/administrators) for step-by-step instructions on res
 </Accordion>
 
 <Accordion title="Session expired — redirected back to login">
-  If SIGAS redirects you to the login page while you were working, your PHP session has expired. This is a normal security behavior. Simply log in again with your RUT and password to resume where you left off. Your previously scheduled appointments and saved data are not affected.
+  If SIGAS redirects you to the login page while you were working, your session has expired. This is a normal security behavior. Simply log in again with your RUT and password to resume where you left off. Your previously scheduled appointments and saved data are not affected.
 </Accordion>

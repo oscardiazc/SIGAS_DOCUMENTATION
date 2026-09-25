@@ -1,7 +1,7 @@
 ---
 title: "Administrator Accounts: Add and Manage System Users"
 sidebarTitle: "Administrators"
-description: "Create and manage SIGAS administrator accounts, reset passwords, upload profile photos, and control who has access to your health center management system."
+description: "Create and manage SIGAS administrator accounts, update names and passwords, upload profile photos, and control who has access to the health center system."
 ---
 
 The Administrators module lets you control who can log in to and operate SIGAS. Every person who schedules appointments, manages patient records, or accesses the audit log must have an administrator account. You can create accounts for new staff, update credentials when details change, and remove access promptly when staff leave. All account activity — including the creation, editing, and deletion of other administrators — is recorded in the audit log.
@@ -16,11 +16,12 @@ Navigate to **Panel Admin → Administradores** from the main sidebar.
 
 | Field | Description |
 |-------|-------------|
-| **RUT** | Chilean national identity number — the unique identifier for each administrator account (format: `12345678-9`) |
-| **Full name** (`nombre`) | The administrator's name as it appears in audit log entries and the interface |
-| **Email address** (`correo`) | The administrator's email address for reference |
-| **Password** | Bcrypt-hashed password used to log in and to authorise sensitive operations (deletions) |
-| **Profile photo** | Optional circular photo displayed in the administrators list and the header |
+| **RUT** | Chilean national identity number — the unique identifier for each administrator account (format: `12.345.678-9`) |
+| **Nombre** | The administrator's full name as it appears in audit log entries and throughout the interface |
+| **Correo** | The administrator's email address (optional) |
+| **Contraseña** | Password used to log in and to authorise sensitive operations such as deletions |
+| **Foto de Perfil** | Optional circular photo displayed in the administrators list and the application header |
+| **Fecha Registro** | The date the account was created, shown in the administrators table |
 
 ---
 
@@ -34,13 +35,13 @@ Navigate to **Panel Admin → Administradores** from the main sidebar.
     Click the **+ Nuevo Administrador** button in the top-right corner. The creation form opens.
   </Step>
   <Step title="Enter the account details">
-    Fill in the new administrator's **RUT** (format: `12345678-9`), **full name**, and **email address**. RUT and name are required; email is optional but recommended.
+    Fill in the new administrator's **RUT** (format: `12.345.678-9`) and **full name**. Both fields are required. You may also enter an email address, though this is optional.
   </Step>
   <Step title="Set an initial password">
-    Enter a temporary password in the **Contraseña** field. The new administrator should change it after their first login. SIGAS does not enforce password expiry, so communicate the change requirement directly.
+    Enter a password in the **Contraseña** field. A password is required when creating a new account. Communicate the credentials to the new administrator directly — SIGAS does not send account notification emails.
   </Step>
   <Step title="Upload a profile photo (optional)">
-    Click **Choose File** under Foto de Perfil and select an image (JPG, PNG, or WebP). Use the circular crop tool to frame the photo, then click **Aplicar Recorte** to confirm. If you skip this step, a placeholder avatar showing the administrator's initial is used.
+    Click **Choose File** under **Foto de Perfil** and select an image (JPG, PNG, or WebP). Use the circular crop tool to frame the photo, then click **Aplicar Recorte** to confirm. If you skip this step, a placeholder avatar showing the administrator's initial is used.
   </Step>
   <Step title="Click Guardar">
     Click **Guardar** — the account is active immediately. The new administrator can log in straight away using the RUT and password you set.
@@ -51,7 +52,7 @@ Navigate to **Panel Admin → Administradores** from the main sidebar.
 
 ## Editing an Administrator
 
-To update an existing administrator's details, click their row in the administrators table. A profile popup appears showing their name and RUT. Click **Editar** to open the edit form.
+To update an existing administrator's details, click their row in the administrators table. A profile popup appears showing their name, RUT, and registration date. Click **Editar** to open the edit form.
 
 In the edit form you can update:
 
@@ -109,7 +110,7 @@ The account is removed immediately and the page reloads. The deletion is recorde
 </Tip>
 
 <Note>
-  All administrator actions — scheduling appointments, deleting records, editing specialist or patient data — are recorded in the audit log with the administrator's RUT and full name. This provides a complete, tamper-evident record of who did what and when.
+  All administrator actions — scheduling appointments, deleting records, editing specialist or patient data — are recorded in the audit log with the administrator's RUT and full name. This provides a complete record of who did what and when.
 </Note>
 
 ---
