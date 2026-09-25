@@ -1,0 +1,91 @@
+---
+title: "Mammography Referral Management in SIGAS"
+sidebarTitle: "Overview"
+description: "SIGAS tracks external mammography referrals separately from regular appointments, with a dedicated status workflow to monitor each patient's progress through screening."
+---
+
+The Mamografías module gives you a centralized view of every external mammography referral your health center has created. Because mammography exams take place outside your facility, SIGAS tracks them in a dedicated referral list — completely separate from the clinical box schedule — so you always know where each patient stands in the screening process.
+
+## What is a Mammography Referral?
+
+A mammography referral is an external referral: the patient is sent to an outside facility for their mammography exam, which means **no clinical box at your health center is occupied**. The referral does not block a time slot or assign a specialist. Instead, SIGAS creates a standalone record that you can monitor from start to confirmed appointment.
+
+This separation keeps your internal schedule clean while ensuring that referred patients are never lost in the process. Every referral moves through a three-stage workflow so your team always knows what action — if any — is still required.
+
+## Referral Statuses
+
+Each mammography referral is assigned one of three statuses. Update the status as the referral progresses to keep the tracker accurate.
+
+<CardGroup cols={3}>
+  <Card title="⏳ Lista de Espera" icon="clock">
+    The referral has been created in SIGAS and the patient is waiting. No contact with the external center has been made yet. This is the default status when a referral is first saved.
+  </Card>
+  <Card title="📩 Solicitada" icon="envelope">
+    The referral has been formally requested to the external center. Your team has communicated the need, but an appointment date has not yet been confirmed.
+  </Card>
+  <Card title="✅ Agendada" icon="calendar-check">
+    The mammography appointment has been confirmed at the external facility. The patient has a scheduled date for their exam.
+  </Card>
+</CardGroup>
+
+## The Mamografías Module
+
+Access the Mamografías module by clicking **Mamografías** in the top navigation bar. The page is divided into two areas:
+
+**Summary Cards** — Three cards at the top of the page display a live count of referrals in each status:
+
+- **Lista de Espera** — total referrals awaiting action (shown with a yellow accent)
+- **Solicitadas** — total referrals formally requested (shown with a blue accent)
+- **Agendadas** — total referrals with a confirmed appointment (shown with a green accent)
+
+**Referral Table** — Below the summary cards, a full table lists every referral on record, sorted from most recent to oldest. Each row displays:
+
+| Column | What it shows |
+|---|---|
+| **Fecha** | Date the referral was created |
+| **RUT / Folio** | Patient RUT and optional folio number |
+| **Paciente** | Full patient name |
+| **Contacto** | Phone number and email address |
+| **Unidad / Previsión** | Section or unit and the patient's insurance type |
+| **Estado** | Current referral status (editable inline) |
+
+Use the **search bar** in the top-right corner of the table to filter referrals instantly. You can search by:
+
+- Patient **RUT**
+- **Folio** number
+- Patient **name**
+
+The table updates as you type — no need to press Enter or reload the page.
+
+## Updating a Referral Status
+
+You can change a referral's status directly from the table without opening a separate form.
+
+<Steps>
+  <Step title="Go to Mamografías">
+    Click **Mamografías** in the top navigation bar to open the referral tracker.
+  </Step>
+  <Step title="Find the patient">
+    Use the search bar to filter by RUT, folio, or name — or scroll through the table to locate the patient's row.
+  </Step>
+  <Step title="Open the status dropdown">
+    In the **Estado** column of the patient's row, click the dropdown selector. It currently shows the patient's active status.
+  </Step>
+  <Step title="Select the new status">
+    Choose one of the three options:
+    - **⏳ Lista de espera**
+    - **📩 Solicitada**
+    - **✅ Agendada**
+  </Step>
+  <Step title="Confirm the update">
+    The status updates instantly. A brief confirmation message — **"Estado guardado."** — appears at the top of the table. No save button is required.
+  </Step>
+</Steps>
+
+<Note>
+  Status changes are recorded in the audit log with action type **MAMOGRAFIA** so you can track when each status was updated and by whom.
+</Note>
+
+---
+
+Continue reading: [Creating and Managing Mammography Referrals](/mammography/referral-workflow)

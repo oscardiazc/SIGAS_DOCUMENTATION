@@ -1,47 +1,76 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with SIGAS in Minutes"
+sidebarTitle: "Quick Start"
+description: "Set up your SIGAS account and schedule your first patient appointment in four steps. Learn to navigate the dashboard and core features."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+This guide walks you through everything you need to do from the moment you receive your SIGAS credentials to the moment your first appointment is confirmed on the board. You'll be up and running in under five minutes.
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+<Note>
+  SIGAS uses the Chilean RUT format for patient and administrator identification. Always enter RUTs without dots and with a dash before the check digit — for example, `12345678-9`. The login page formats the RUT visually as you type.
+</Note>
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+  <Step title="Log in">
+    Open your SIGAS URL in a web browser. On the login page you'll see two fields:
 
-    ```bash
-    npm install your-package
-    ```
+    - **RUT Administrador** — enter your RUT in the format `12345678-9`. The field formats the number automatically as you type.
+    - **Contraseña** — enter the password assigned to your administrator account.
+
+    Click **Ingresar**. If your credentials are correct, SIGAS redirects you to the dashboard immediately. If you see a red error banner, double-check that your RUT is correct and that you're using the right password. See [Log In to SIGAS](/login) for troubleshooting help.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
 
-    ```bash
-    your-cli init
-    ```
+  <Step title="Explore the dashboard">
+    The dashboard opens to the **Daily Box Occupancy** view for today's date. The grid is organized as follows:
+
+    - **Rows** represent time slots, running from **08:00** to **17:00** in hourly intervals (with a lunch break from 13:00).
+    - **Columns** represent the five clinical boxes: Box Procedimientos, Box Dental, Box Médico, Box Salud Mental, and Box Rehabilitación.
+    - **Color-coded blocks** fill each booked slot. The legend at the bottom of the page identifies each care type by color:
+      - Teal — Toma de Muestras
+      - Green — EMP
+      - Pink — Dental
+      - Blue — Morbilidad
+      - Orange — Certificados
+      - Purple — Salud Mental USIT
+      - Teal-green — Kinesiología
+      - Dark grey — Reserva de Sala
+
+    Empty slots are available for new appointments. Click any existing appointment block to see the patient's details or to remove the appointment.
+
+    Use the **Horarios Boxes** menu in the top navigation to view any box's full weekly schedule.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
-    ```
+  <Step title="Schedule your first appointment">
+    From the dashboard, click **+ Agendar Paciente** in the top-right corner. The scheduling form opens. Fill in:
+
+    1. **RUT del Paciente** — the patient's Chilean RUT (e.g., `12345678-9`).
+    2. **Nombre del Paciente** — the patient's full name.
+    3. **Tipo de Atención** — select the care type from the dropdown. The system automatically assigns the correct clinical box based on your selection.
+    4. **Fecha** — pick the appointment date from the calendar.
+    5. **Hora** — select the available time slot.
+
+    Review the details and submit the form. The appointment is saved immediately and appears on the dashboard grid.
+
+    <Tip>
+      If every time slot in a box is already taken but you still need to fit a patient in, check the **Sobrecupo** (overbooking) checkbox on the scheduling form. This lets you book into an already-occupied slot when clinically necessary.
+    </Tip>
+
+    To reserve a full box or room for internal use instead of scheduling a patient, click **+ Agendar Box** on the dashboard. See [Schedule a Box](/scheduling/schedule-box) for details.
+  </Step>
+
+  <Step title="Track the appointment">
+    After saving, the new appointment appears as a color-coded block in the correct box column and time row on the dashboard. You can:
+
+    - **Click the block** to view the full patient details and appointment information.
+    - **Delete the appointment** from the detail modal by clicking **Eliminar Cita** and confirming with your administrator password.
+    - **View the weekly schedule** for that box via the **Horarios Boxes** menu to see how the rest of the week looks.
+
+    All scheduling actions are automatically recorded in the audit log under **Panel Admin → Auditoría**, so there's always a traceable record of who scheduled or removed each appointment.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## What to explore next
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+- [Dashboard overview](/dashboard) — a deeper look at the occupancy grid, modals, and daily navigation
+- [Schedule a patient](/scheduling/schedule-patient) — full field-by-field reference for the scheduling form
+- [Schedule a box](/scheduling/schedule-box) — how to reserve a clinical box for internal use

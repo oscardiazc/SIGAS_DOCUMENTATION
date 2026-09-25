@@ -1,0 +1,89 @@
+{
+  "projectType": "saas",
+  "projectName": "SIGAS",
+  "projectDescription": "SIGAS (Sistema de Gestión de Atención de Salud) is a web-based health center management platform that enables administrators to schedule patient appointments, manage clinical boxes, track mammography referrals, and audit all system activity.",
+  "theme": "almond",
+  "primaryColor": "#1a365d",
+  "lightColor": "#2b6cb0",
+  "darkColor": "#0f2a4a",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "login"
+            ]
+          },
+          {
+            "group": "Dashboard & Scheduling",
+            "pages": [
+              "dashboard",
+              "scheduling/schedule-patient",
+              "scheduling/schedule-box",
+              "scheduling/overbooking"
+            ]
+          },
+          {
+            "group": "Clinical Boxes",
+            "pages": [
+              "boxes/overview",
+              "boxes/weekly-view",
+              "boxes/monthly-view"
+            ]
+          },
+          {
+            "group": "Mammography Referrals",
+            "pages": [
+              "mammography/overview",
+              "mammography/referral-workflow"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "admin/patients",
+              "admin/specialists",
+              "admin/administrators",
+              "admin/attendance-history",
+              "admin/audit-log"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Daily box occupancy dashboard with color-coded appointment types",
+    "Patient appointment scheduling with automatic box assignment",
+    "Overbooking (sobrecupo) support for high-demand time slots",
+    "Direct box/room reservation for internal use",
+    "Mammography referral tracking with multi-stage status workflow",
+    "Weekly and monthly clinical box schedule views",
+    "Patient record management with RUT-based search",
+    "Specialist management with care type assignments",
+    "Multi-administrator account management with role-based access",
+    "Full administrator audit trail for all system actions"
+  ],
+  "publicApiSurface": [
+    "GET /modulos/api_citas.php?accion=dia&fecha={date} — retrieve daily appointments",
+    "GET /modulos/api_citas.php?accion=box_rango&box_id={id}&fecha_inicio={date}&fecha_fin={date} — retrieve appointments by box and date range",
+    "POST /modulos/api_citas.php?accion=guardar_cita — create a patient appointment or mammography referral",
+    "POST /modulos/api_citas.php?accion=guardar_reserva_box — create an internal box reservation",
+    "POST /modulos/api_citas.php?accion=eliminar — delete an appointment (requires admin password)",
+    "GET /modulos/ajax_obtener_disponibilidad.php — get available time slots for a care type and date",
+    "GET /modulos/ajax_obtener_disponibilidad_box.php — get available slots for box scheduling",
+    "GET /modulos/ajax_buscar_paciente.php — search patient by RUT",
+    "GET /modulos/ajax_pacientes_historial.php — retrieve patient history",
+    "POST /modulos/ajax_actualizar_mamografia.php — update mammography referral status",
+    "POST /modulos/api_administradores.php?accion=guardar — create or edit an administrator",
+    "POST /modulos/api_administradores.php?accion=eliminar — delete an administrator",
+    "GET /modulos/api_especialistas.php?accion=atenciones&especialista_id={id} — get care types assigned to a specialist",
+    "POST /modulos/api_especialistas.php?accion=guardar — create or edit a specialist",
+    "POST /modulos/api_especialistas.php?accion=eliminar — delete a specialist"
+  ]
+}

@@ -1,0 +1,77 @@
+---
+title: "Schedule a Patient Appointment in SIGAS"
+sidebarTitle: "Schedule Patient"
+description: "Step-by-step guide to booking a patient appointment in SIGAS, including patient data entry, care type selection, automatic box assignment, and time slot selection."
+---
+
+Scheduling a patient appointment in SIGAS takes you through a single form that collects patient data, assigns the correct clinical box based on the care type you choose, and presents only the available time slots — so you never accidentally double-book a box. Once you save the appointment, it appears on the dashboard grid immediately.
+
+## Before You Begin
+
+Make sure the following conditions are met before opening the scheduling form:
+
+- The patient has a valid **Chilean RUT** in the format `12345678-9` (no dots, with a dash before the verification digit).
+- The **care type** you intend to book is active in the system.
+- At least one **specialist** is registered and assigned to that care type. If no specialists appear in the dropdown, contact your system administrator.
+
+## Scheduling a Patient Appointment
+
+<Steps>
+  <Step title="Navigate to Scheduling">
+    Click **+ Agendar Paciente** in the top-right corner of the dashboard, or open the **Agendar** menu in the top navigation and select **Agendar Pacientes**. The scheduling form opens with the current date pre-filled.
+  </Step>
+  <Step title="Enter Patient Data">
+    Fill in the patient information fields in the **Datos del Paciente** section:
+
+    | Field | Notes |
+    |---|---|
+    | **RUT Paciente** | Required. Format: `12345678-9` — no dots, with dash. |
+    | **N° Folio** | Optional. Reference number for internal tracking (e.g., `F-1024`). |
+    | **Nombres** | Required. Patient's first name(s). |
+    | **Apellidos** | Required. Patient's last name(s). |
+    | **Teléfono** | Required. Contact phone number. |
+    | **Correo Electrónico** | Optional. Patient's email address. |
+    | **Sección / Unidad** | Required. The department or unit the patient belongs to. |
+    | **Previsión** | Required. Health insurance plan — choose from: FONASA A, FONASA B, FONASA C, FONASA D, ISAPRE, CAPREDENA, DIPRECA, or PARTICULAR. |
+  </Step>
+  <Step title="Select Care Type">
+    In the **Configuración de Atención en Box** section, open the **Tipo de Atención** dropdown and select the appropriate care type. The system immediately assigns the correct clinical box based on your selection — the **Box Asignado** field fills in automatically and is read-only:
+
+    | Care Type | Automatically Assigned Box |
+    |---|---|
+    | Toma de Muestras | Box Procedimientos |
+    | EMP | Box Procedimientos |
+    | Dental | Box Dental |
+    | Morbilidad | Box Médico |
+    | Certificados | Box Médico |
+    | Salud Mental USIT | Box Salud Mental |
+    | Kinesiología | Box Rehabilitación |
+  </Step>
+  <Step title="Select Specialist">
+    Open the **Especialista** dropdown. The list is automatically filtered to show only specialists who are registered and active for the selected care type. Choose the specialist who will attend this appointment.
+  </Step>
+  <Step title="Pick a Date and Time Slot">
+    Select the appointment **Fecha** using the date picker. The **Bloque Horario Disponible** dropdown then loads all available time slots for that box on the selected date. Slots that are already occupied are filtered out automatically — only free slots appear. Select the desired time.
+  </Step>
+  <Step title="Save the Appointment">
+    Click **Guardar Cita**. SIGAS validates the slot one final time against the current schedule. If the slot is still free, the appointment is confirmed and you are redirected to the dashboard, where the new appointment block appears immediately in the correct box column.
+  </Step>
+</Steps>
+
+## Existing Patient Lookup
+
+When you type a RUT into the **RUT Paciente** field and move to the next field, SIGAS automatically searches the patient database. If a matching record is found, the form fills in the patient's name, last name, phone number, email, section/unit, and previsión automatically.
+
+You can update any of the pre-filled fields before saving — SIGAS will overwrite the patient record with the new values when the appointment is confirmed. This keeps patient contact information current without requiring a separate editing step.
+
+<Note>
+  RUT must be in the format `12345678-9` — no dots, with a dash before the verification digit. The field accepts up to 12 characters and formats the RUT visually as you type, but the value stored internally uses no dots.
+</Note>
+
+<Tip>
+  If the patient also needs a mammography referral, check the **¿Es derivación externa a Mamografía? (No ocupa Box)** checkbox before saving. This registers the referral in the mammography waiting list without occupying a clinical box or creating a dashboard appointment block. The action is logged under the `DERIVACION` audit code.
+</Tip>
+
+---
+
+If you need to schedule an appointment in a time slot that is already occupied, see [Schedule Appointments with Overbooking](/scheduling/overbooking). To block a box for internal use without a patient, see [Reserve a Box for Internal Use](/scheduling/schedule-box).

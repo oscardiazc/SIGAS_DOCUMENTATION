@@ -1,0 +1,111 @@
+---
+title: "Creating and Managing Mammography Referrals"
+sidebarTitle: "Referral Workflow"
+description: "Learn how to create a mammography referral from the scheduling form, track it through the three-stage workflow, and close it once the exam is confirmed."
+---
+
+When a patient needs an external mammography exam, you create the referral directly from the standard scheduling form — the same form you use for regular appointments. SIGAS detects that it is a mammography referral and saves it to the dedicated tracker without touching the box schedule. From there, you advance the referral through three stages until the patient has a confirmed appointment at the external facility.
+
+## Creating a Referral
+
+<Steps>
+  <Step title="Navigate to Agendar Pacientes">
+    In the top navigation bar, go to **Agendar** → **Agendar Pacientes** to open the scheduling form.
+  </Step>
+  <Step title="Fill in the patient data">
+    Complete all required fields in the **Datos del Paciente** section:
+
+    - **RUT Paciente** — Enter the RUT without dots and with a hyphen (e.g. `12345678-9`).
+    - **N° Folio** *(optional)* — Enter the folio number if you need to link the referral to a physical file.
+    - **Nombres** and **Apellidos** — Patient's full name.
+    - **Teléfono** — Required contact number.
+    - **Correo Electrónico** *(optional)* — Patient's email address.
+    - **Sección / Unidad** — The section or unit the patient belongs to.
+    - **Previsión** — Select the patient's insurance type: FONASA A–D, ISAPRE, CAPREDENA, DIPRECA, or PARTICULAR.
+  </Step>
+  <Step title="Check the mammography checkbox">
+    In the shaded panel below the patient fields, check the box labelled:
+
+    > **¿Es derivación externa a Mamografía? (No ocupa Box)**
+
+    Checking this option tells SIGAS that this is an external referral, not a clinical appointment. The box-assignment and time-slot fields are automatically hidden.
+  </Step>
+  <Step title="Click Guardar Cita">
+    Click the **Guardar Cita** button at the bottom of the form. SIGAS saves the referral record in the `mamografias` table and logs a **DERIVACION** audit entry — without reserving any clinical box or time slot.
+  </Step>
+</Steps>
+
+<Note>
+  A mammography referral does not block a time slot or assign a specialist. It is a standalone record in the referral tracker, completely separate from the daily box schedule.
+</Note>
+
+## Tracking the Referral
+
+Once you save the referral, it immediately appears in the **Mamografías** module with status **Lista de Espera**. Move the referral forward as you act on it:
+
+- **Lista de Espera** → The referral exists in SIGAS. The patient is waiting and no contact with the external center has been made yet.
+- **Solicitada** → You have contacted the external center and formally requested the appointment. Update the status to **Solicitada** to reflect this.
+- **Agendada** → The external center has confirmed a date for the exam. Update the status to **Agendada** to close the active workflow.
+
+To change a status, open the **Mamografías** page, find the patient's row, and select the new value from the **Estado** dropdown. The change saves immediately — no additional button click needed.
+
+## Searching for a Referral
+
+The Mamografías page includes a search bar above the referral table. Use it to filter the list in real time by any of the following:
+
+- **Patient RUT** — Type the RUT with or without the hyphen.
+- **Folio number** — Type the folio as it was entered during referral creation (e.g. `F-1024`).
+- **Patient name** — Type part of the first name, last name, or both.
+
+The table filters as you type. Clear the search bar to restore the full list.
+
+## Referral Data Recorded
+
+SIGAS stores the following information for every mammography referral:
+
+<Accordion title="View all recorded fields">
+  | Field | Description |
+  |---|---|
+  | **Date of referral creation** | The calendar date on which the referral was saved (`fecha_derivacion`). |
+  | **Patient RUT** | The unique national identification number for the patient. |
+  | **Folio** *(optional)* | An optional reference number linking to external paperwork or a physical file. |
+  | **Full patient name** | First name and last name as entered in the scheduling form. |
+  | **Phone** | The patient's contact telephone number. |
+  | **Email** | The patient's email address, if provided. |
+  | **Section / Unit** | The section or unit the patient is assigned to within your health center. |
+  | **Previsión (insurance type)** | The patient's health insurance category (e.g. FONASA B, ISAPRE). |
+  | **Current status** | The active stage of the referral: Lista de Espera, Solicitada, or Agendada. |
+</Accordion>
+
+## Complete the Referral Cycle
+
+Every mammography referral follows a four-step lifecycle from creation to confirmed exam.
+
+<Steps>
+  <Step title="🏥 Patient visits the health center">
+    The healthcare administrator opens the scheduling form and creates the mammography referral. The patient's data is recorded and the referral is saved with status **Lista de Espera**.
+  </Step>
+  <Step title="📋 Referral is in Lista de Espera">
+    The referral appears in the Mamografías tracker. The patient is waiting for capacity at the external center. No further system action is needed until contact is made.
+  </Step>
+  <Step title="📩 Administrator contacts the external center">
+    Once you reach out to the external facility to request the appointment, update the referral status to **Solicitada**. This records that action has been taken and the request is pending confirmation.
+  </Step>
+  <Step title="✅ External center confirms the date">
+    When the external facility confirms the patient's appointment date, update the status to **Agendada**. The referral cycle is complete.
+  </Step>
+</Steps>
+
+<Tip>
+  Use the folio field to link the referral to external paperwork or the patient's physical file number. This makes it easier to cross-reference the digital record with any printed documentation.
+</Tip>
+
+<Warning>
+  Once a referral is marked **Agendada**, verify that the patient has been notified of their external appointment date. SIGAS records the status change but does not send automated notifications to the patient.
+</Warning>
+
+---
+
+Related pages:
+- [Mammography Referral Management — Overview](/mammography/overview)
+- [Patient Administration](/admin/patients)

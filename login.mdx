@@ -1,0 +1,73 @@
+---
+title: "Log In to SIGAS"
+sidebarTitle: "Login"
+description: "Access your SIGAS health center management account using your administrator RUT and password. Learn how sessions work and what to do if you're locked out."
+---
+
+Every SIGAS session starts at the login page. Access is restricted to registered administrators — each person logs in with their own credentials so that all activity in the system can be traced back to the individual who performed it. This page explains how to log in, how sessions work, and what to do if you can't access your account.
+
+<Warning>
+  Do not share your administrator credentials. Every action you take while logged in is recorded in the audit log with your name. If someone else uses your account, their actions will be attributed to you.
+</Warning>
+
+## Credentials
+
+SIGAS uses two pieces of information to authenticate you:
+
+- **RUT** — your Chilean national identity number, used as your unique username. Enter it without dots and with a dash before the check digit: `12345678-9`. The login page formats the number visually as you type, but the system strips all formatting before checking your identity, so either format is accepted.
+- **Password** — set by the lead administrator when your account was created, or updated at any time from the [Administrators panel](/admin/administrators).
+
+Your account is created by another administrator — you cannot self-register.
+
+## How to log in
+
+<Steps>
+  <Step title="Open the SIGAS login page">
+    Navigate to your health center's SIGAS URL in any modern web browser. If you're already logged in, SIGAS redirects you to the dashboard automatically.
+  </Step>
+  <Step title="Enter your RUT">
+    Type your RUT into the **RUT Administrador** field. Use the format `12345678-9` — no dots, with a dash before the check digit. The field formats the number visually as you type; this is cosmetic and does not affect how your identity is verified.
+  </Step>
+  <Step title="Enter your password">
+    Type your administrator password into the **Contraseña** field.
+  </Step>
+  <Step title="Click Ingresar">
+    Click the **Ingresar** button. If your credentials are correct, SIGAS starts your session and takes you directly to the daily dashboard. If the credentials are wrong, you'll see an error banner — see [Login errors](#login-errors) below.
+  </Step>
+</Steps>
+
+## Session management
+
+SIGAS uses PHP server-side sessions to keep you authenticated while you work. Here's what you need to know:
+
+- **Logging out** — click **Panel Admin → Cerrar Sesión** in the top navigation bar. This ends your session immediately and returns you to the login page.
+- **Closing your browser** — closing the browser window or tab ends your session. The next time you open SIGAS you'll need to log in again.
+- **Automatic expiry** — sessions expire automatically after a period of inactivity for security. If SIGAS redirects you to the login page unexpectedly, your session has expired — simply log in again.
+- **Concurrent sessions** — avoid logging in from multiple browser tabs simultaneously, as this can cause unexpected session behavior.
+
+## Forgotten password
+
+SIGAS does not offer a self-service password reset on the login page. If you've forgotten your password:
+
+1. Contact another administrator at your health center.
+2. Ask them to open **Panel Admin → Administradores** and reset your password from your administrator record.
+
+If you are the only administrator and have lost access, contact your SIGAS system administrator or technical support team to regain entry.
+
+See [Administrators](/admin/administrators) for step-by-step instructions on resetting a password from the admin panel.
+
+## Login errors
+
+<Accordion title="&quot;Credenciales inválidas. Verifique sus datos.&quot;">
+  This error appears when the RUT or password you entered does not match any active administrator record. Check the following:
+
+  - **RUT format** — make sure you're entering your RUT without dots, with a dash before the check digit (e.g., `12345678-9`). The system accepts both formatted and unformatted input, but a typo in the body or check digit will cause this error.
+  - **Password** — passwords are case-sensitive. Make sure Caps Lock is off.
+  - **Correct account** — confirm you're using your own administrator RUT, not a patient RUT or a colleague's credentials.
+
+  If you've verified all of the above and still can't log in, ask another administrator to confirm your account exists in the Administrators panel and that the password is correct.
+</Accordion>
+
+<Accordion title="Session expired — redirected back to login">
+  If SIGAS redirects you to the login page while you were working, your PHP session has expired. This is a normal security behavior. Simply log in again with your RUT and password to resume where you left off. Your previously scheduled appointments and saved data are not affected.
+</Accordion>

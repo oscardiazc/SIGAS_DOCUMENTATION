@@ -1,0 +1,63 @@
+---
+title: "Clinical Boxes Overview: Managing Health Center Rooms"
+sidebarTitle: "Overview"
+description: "Learn how SIGAS organizes care delivery across five specialized clinical boxes, each mapped to specific care types and staffed by dedicated specialists."
+---
+
+SIGAS organizes all patient care around **clinical boxes** — dedicated rooms within the health center, each assigned to a specific type of medical service. Every appointment you schedule is automatically linked to the correct box based on the care type you select, keeping the facility's daily workflow structured and collision-free.
+
+## The Five Clinical Boxes
+
+<CardGroup cols={2}>
+  <Card title="Box Procedimientos (Box 1)" icon="syringe">
+    Handles **Toma de Muestras** (sample collection) and **EMP** (Examen Médico Preventivo). Nurses carry out sample processing and preventive health exams for enrolled patients.
+  </Card>
+  <Card title="Box Dental (Box 2)" icon="tooth">
+    Dedicated to **Dental** care. Dentists conduct full consultations, treatments, and follow-up appointments for patients requiring oral health services.
+  </Card>
+  <Card title="Box Médico (Box 3)" icon="stethoscope">
+    Covers **Morbilidad** (general illness consultations) and **Certificados** (medical certificate issuance). Physicians attend patients for standard consultations and documentation needs.
+  </Card>
+  <Card title="Box Salud Mental (Box 4)" icon="brain">
+    Reserved for **Salud Mental USIT** sessions. Psychiatrists and psychologists conduct consultations under the USIT mental health programme for registered patients.
+  </Card>
+  <Card title="Box Rehabilitación (Box 5)" icon="person-walking">
+    Used for **Kinesiología** (physiotherapy). Kinesiologists run rehabilitation and physical therapy sessions for patients recovering from injuries or managing chronic conditions.
+  </Card>
+</CardGroup>
+
+## Box Assignment
+
+When you schedule a patient and select a care type, SIGAS automatically routes the appointment to the correct box — you never need to choose a box manually for patient appointments. The system reads the care type and maps it to the appropriate room based on the fixed assignments above. This eliminates double-booking across rooms and ensures each specialist's schedule stays isolated from the others.
+
+The only exception is **Reserva de Box / Sala**, a general-purpose reservation type that can be assigned to any available box when you need to block time for administrative or facility purposes.
+
+## Box Operating Hours
+
+SIGAS tracks schedules across working days from **08:00 to 17:00**, with a lunch break between 13:00 and 14:00. Each appointment occupies one or more time slots within that window depending on the duration of the selected care type. The weekly view renders slots proportionally, so a 60-minute appointment visually occupies twice the vertical space of a 30-minute one.
+
+<Note>
+  Appointments scheduled outside the 08:00–17:00 window or during the 13:00–14:00 lunch break will not display correctly in the box schedule grids.
+</Note>
+
+## Care Type Durations
+
+Each care type has a fixed duration that SIGAS uses when calculating slot availability and rendering appointment blocks on the calendar.
+
+| Care Type | Duration | Box |
+|---|---|---|
+| Toma de Muestras | 10 min | Box Procedimientos |
+| EMP | 30 min | Box Procedimientos |
+| Dental | 60 min | Box Dental |
+| Morbilidad | 20 min | Box Médico |
+| Certificados | 10 min | Box Médico |
+| Salud Mental USIT | 60 min | Box Salud Mental |
+| Kinesiología | 30 min | Box Rehabilitación |
+| Reserva de Box / Sala | 60 min | Any box |
+
+---
+
+Continue exploring the box schedule views:
+
+- [Weekly View →](./weekly-view) — see all appointments for a box across a 7-day window
+- [Monthly View →](./monthly-view) — get a high-level overview of appointment volume by month

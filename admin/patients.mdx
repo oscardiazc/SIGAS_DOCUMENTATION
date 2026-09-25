@@ -1,0 +1,106 @@
+---
+title: "Patient Records: Search, View, and Manage Patients"
+sidebarTitle: "Patients"
+description: "Manage patient records in SIGAS: search by RUT or name, view full appointment history, update contact details, and remove patients when needed."
+---
+
+The Patients module gives you a complete directory of every person registered in your health center. From a single screen you can search the directory, inspect a patient's full appointment history across all care types, review their contact and insurance details, and — when necessary — permanently remove their record from the system. Patient entries are created automatically the first time an appointment is scheduled for a given RUT, so the directory always reflects your actual scheduling activity.
+
+## Accessing the Module
+
+Navigate to **Panel Admin → Pacientes** from the main sidebar.
+
+---
+
+## Patient Record Fields
+
+SIGAS stores the following information for each patient:
+
+| Field | Description |
+|-------|-------------|
+| **RUT** | Chilean national identity number — the unique identifier for every patient record (e.g., `12345678-9`) |
+| **Folio** | Optional external reference number used by some health centers for internal tracking |
+| **First name** (`nombre`) | Patient's given name |
+| **Last name** (`apellidos`) | Patient's surname(s) |
+| **Phone number** (`telefono`) | Contact phone, captured at the time of scheduling |
+| **Email address** (`correo`) | Optional email contact |
+| **Section / Unit** (`seccion_unidad`) | The organizational unit or department the patient belongs to |
+| **Insurance type** (`previsión`) | The patient's healthcare coverage, one of: FONASA A, FONASA B, FONASA C, FONASA D, ISAPRE, CAPREDENA, DIPRECA, or PARTICULAR |
+
+---
+
+## Searching for a Patient
+
+The left-hand panel on the Pacientes page contains the patient directory and a live search bar. As you type, the list filters instantly — no need to press Enter or click a button.
+
+You can search by any of the following:
+
+- **RUT** — full or partial (e.g., `1234` matches all RUTs containing that sequence)
+- **Full name** — first name, last name, or both
+- **Folio** — if the patient has an external folio assigned
+- **Care type** — the type of consultation the patient has previously attended
+
+Click any name in the filtered list to load that patient's complete profile and appointment history in the right-hand panel.
+
+---
+
+## Viewing Appointment History
+
+When you select a patient from the directory, the right panel displays:
+
+- **Personal details** — name, RUT, folio, phone, email, unit, and insurance type
+- **Distribution chart** — a doughnut chart showing the breakdown of all appointments and referrals by care type
+- **Appointment table** — a full chronological list of every recorded attendance, including:
+  - Date and time range
+  - Box number
+  - Care type (shown as a colour-coded badge)
+  - Attending specialist
+  - Modality: **Normal**, **Sobrecupo** (overbooking), or **Derivación** (mammography referral)
+
+<Note>
+  Mammography referrals appear in the history as **Derivación externa** — they do not have a box time slot but are counted in the care-type distribution chart.
+</Note>
+
+---
+
+## Editing Patient Data
+
+Patient records in SIGAS are updated automatically whenever a new appointment is scheduled using the same RUT — the system always writes the most recent contact details provided at scheduling time.
+
+If you need to correct a phone number, email address, unit assignment, or insurance type outside of a new appointment, you can update those fields directly through the patient record in the directory. Click the patient's name, then use the edit action available in their profile panel.
+
+---
+
+## Deleting a Patient Record
+
+<Warning>
+  Deleting a patient removes their record and all associated appointment history permanently. This action is logged in the audit trail but cannot be reversed.
+</Warning>
+
+<Steps>
+  <Step title="Navigate to Panel Admin → Pacientes">
+    Open the patient directory from the main sidebar.
+  </Step>
+  <Step title="Locate the patient">
+    Use the search bar to find the patient by RUT, folio, or name. Click their name to load their profile in the right panel.
+  </Step>
+  <Step title="Click Eliminar Paciente">
+    In the top-right corner of the patient profile panel, click the red **Eliminar Paciente** button. A confirmation modal will appear showing the patient's full name and RUT.
+  </Step>
+  <Step title="Enter your administrator password">
+    Type your current administrator password in the **Ingrese su Contraseña de Administrador** field to authorise the deletion.
+  </Step>
+  <Step title="Click Confirmar Eliminación">
+    Click the **Confirmar Eliminación** button. The patient, all their appointment records, and all associated mammography referrals are immediately and permanently removed. The directory reloads automatically.
+  </Step>
+</Steps>
+
+<Note>
+  Patients created through the Box Reservation feature (internal room bookings) use a system-generated RUT starting with `SALA-` and are not linked to real patient records. They appear in the directory but represent room reservations, not clinical patients.
+</Note>
+
+---
+
+## Related Pages
+
+- [Attendance History](/admin/attendance-history) — filter and review the full appointment record across all patients

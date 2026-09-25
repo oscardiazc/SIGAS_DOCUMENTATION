@@ -1,0 +1,93 @@
+---
+title: "Weekly Box Schedule: View a Box Across 7 Days"
+sidebarTitle: "Weekly View"
+description: "Use SIGAS's weekly box view to see all appointments for a specific clinical box across a 7-day period, navigate between weeks, and identify availability gaps."
+---
+
+The weekly box view gives you a detailed, day-by-day look at every confirmed appointment scheduled in a single clinical box. Use it to spot gaps in the week ahead, verify that a specialist's schedule is correctly loaded, or identify the best moment to fit in an additional patient before the week fills up.
+
+## Accessing the Weekly View
+
+<Steps>
+  <Step title="Open the Horarios Boxes menu">
+    In the top navigation bar, click **Horarios Boxes**. A dropdown appears listing all five clinical boxes by name.
+  </Step>
+  <Step title="Select a box">
+    Click the box you want to inspect — for example, **Box Procedimientos**, **Box Dental**, **Box Médico**, **Box Salud Mental**, or **Box Rehabilitación**. SIGAS opens the weekly schedule for that box, defaulting to the current week.
+  </Step>
+</Steps>
+
+## What the Weekly View Shows
+
+The weekly view renders a calendar grid with one column per working day (Monday through Friday). Each column represents a full working day for the selected box from 08:00 to 17:00.
+
+- **Day columns** — each column is labelled with the day name and the calendar date (e.g., *Lunes 14/07*).
+- **Appointment blocks** — confirmed appointments appear as color-coded blocks positioned vertically according to their start time. Each block displays the patient's name and, for sobrecupo appointments, a **[S]** suffix.
+- **Tooltip details** — hover over any block to see the full time range, patient name, and care type without opening the detail modal.
+- **Click to inspect** — click any block to open the appointment detail modal, which shows the patient's RUT, contact information, health insurance (previsión), unit, care type, time range, and sobrecupo status.
+
+<Note>
+  Each box has its own independent weekly view. Switching to Box Dental, for example, shows only dental appointments — other boxes are not visible from that view.
+</Note>
+
+## Navigating Between Weeks
+
+The week navigation controls sit in the top-right corner of the view:
+
+| Control | Action |
+|---|---|
+| **← Semana Anterior** | Move back one week |
+| **Hoy** | Jump to the week containing today |
+| **Semana Siguiente →** | Move forward one week |
+| **Vista Mensual** | Switch to the monthly view for the same box |
+
+The header also shows the date range of the currently displayed week (e.g., *Semana del 14/07/2025 al 18/07/2025*) so you always know exactly which period you are viewing.
+
+## Selecting a Specific Box
+
+Every box's schedule is accessed independently. To switch from one box to another, return to the **Horarios Boxes** dropdown in the top navigation and select a different box. The dropdown always lists all five boxes in order:
+
+1. Box Procedimientos
+2. Box Dental
+3. Box Médico
+4. Box Salud Mental
+5. Box Rehabilitación
+
+SIGAS preserves the week you were viewing when you navigate between boxes, so switching from Box Médico to Box Dental takes you straight to the same week in the new box's calendar.
+
+## Interpreting the Schedule
+
+<Accordion title="Color coding">
+  Each care type has a fixed color that appears consistently across the weekly and monthly views and the dashboard legend:
+
+  | Care Type | Color |
+  |---|---|
+  | Certificados | Orange (#FF9800) |
+  | Morbilidad | Blue (#2196F3) |
+  | EMP | Green (#4CAF50) |
+  | Salud Mental USIT | Purple (#9C27B0) |
+  | Reserva de Box / Sala | Dark grey (#4A5568) |
+</Accordion>
+
+<Accordion title="Empty columns">
+  A day column with no appointment blocks means the box has no confirmed appointments on that date. This is normal for public holidays or days when the assigned specialist is not scheduled.
+</Accordion>
+
+<Accordion title="Sobrecupo appointments">
+  Sobrecupo (overflow) appointments appear in the same color as standard appointments but are visually distinguished. On the block itself you will see the **[S]** label. When a sobrecupo appointment overlaps with a regular appointment in the same column, both blocks remain visible — the blocks may visually overlap to signal the time conflict.
+</Accordion>
+
+## Scheduling Directly from the Weekly View
+
+You can click any **empty segment** in a day column to open the appointment scheduling form pre-filled with the selected box, date, and the nearest 10-minute time slot. This lets you book a new appointment without leaving the weekly view.
+
+<Tip>
+  Use the weekly view to identify the best days to schedule high-demand care types before opening appointments to patients.
+</Tip>
+
+---
+
+Related pages:
+
+- [Clinical Boxes Overview ←](./overview) — understand how boxes and care types relate
+- [Monthly View →](./monthly-view) — see the full month's appointment volume at a glance

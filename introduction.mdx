@@ -1,0 +1,69 @@
+---
+title: "SIGAS: Health Center Management Platform"
+sidebarTitle: "Introduction"
+description: "Learn what SIGAS is, who it's for, and how it helps health centers manage appointments, clinical boxes, mammography referrals, and administrative records."
+---
+
+SIGAS (Sistema de Gestión de Atención de Salud) is the central platform for managing daily health center operations. It brings together appointment scheduling, clinical box management, mammography referral tracking, and a full audit trail into a single, browser-based application — so administrators spend less time on paperwork and more time supporting patient care.
+
+## What is SIGAS?
+
+SIGAS is a PHP web application designed for health center administrators who need to coordinate patient appointments and manage day-to-day clinical operations. Rather than juggling spreadsheets or paper-based schedules, administrators use SIGAS to view real-time box occupancy, schedule patients into the right care slot, track specialist schedules, and produce a reliable record of everything that happens in the system.
+
+SIGAS is accessed entirely through a web browser — no installation is required on individual workstations. All data is stored centrally, so every administrator with an account sees the same up-to-date information.
+
+## Key features
+
+<CardGroup cols={2}>
+  <Card title="Daily Box Dashboard" icon="grid-2">
+    A real-time occupancy grid shows all five clinical boxes and every time slot from 08:00 to 17:00. Color-coded appointment blocks let you see what's booked and what's free instantly.
+  </Card>
+  <Card title="Patient Scheduling" icon="calendar-plus">
+    Schedule patient appointments by care type. The system auto-assigns the correct clinical box and flags scheduling conflicts before they're saved.
+  </Card>
+  <Card title="Box Reservation" icon="door-open">
+    Reserve an entire clinical box or room for internal use — such as meetings or equipment maintenance — without creating a patient appointment.
+  </Card>
+  <Card title="Mammography Referral Tracking" icon="notes-medical">
+    Register mammography referrals, record their status, and follow up with patients — all from a dedicated referral management view.
+  </Card>
+  <Card title="Attendance History" icon="clock-rotate-left">
+    Browse the complete history of scheduled appointments, including past cancellations and attendance records, filtered by date or patient.
+  </Card>
+  <Card title="Audit Trail" icon="shield-check">
+    Every action taken by every administrator is logged with a timestamp and username. Use the audit log to review changes, resolve disputes, and meet compliance requirements.
+  </Card>
+</CardGroup>
+
+## Who uses SIGAS?
+
+SIGAS is designed for **health center administrators** — the staff members responsible for coordinating patient appointments, managing clinical box availability, and maintaining administrative records. A typical SIGAS user logs in each morning to review the day's occupancy grid, schedules incoming patient appointments throughout the day, and uses the admin panel to keep patient and specialist records up to date.
+
+Access to SIGAS requires an administrator account. Accounts are created and managed by a lead administrator from the **Administradores** panel — individual users cannot self-register.
+
+## Care types
+
+SIGAS supports the following appointment types. Each care type has a fixed duration and is assigned to a specific clinical box.
+
+| Care type | Duration | Assigned box |
+|---|---|---|
+| Toma de Muestras | 10 min | Box Procedimientos |
+| EMP | 30 min | Box Procedimientos |
+| Dental | 60 min | Box Dental |
+| Morbilidad | 20 min | Box Médico |
+| Certificados | 10 min | Box Médico |
+| Salud Mental USIT | 60 min | Box Salud Mental |
+| Kinesiología | 30 min | Box Rehabilitación |
+| Reserva de Box / Sala | 60 min | Internal use |
+
+## Clinical boxes
+
+SIGAS manages five clinical boxes. Each box appears as a dedicated column on the daily dashboard and has its own weekly schedule view.
+
+- **Box Procedimientos** — samples and EMP appointments
+- **Box Dental** — dental care
+- **Box Médico** — morbidity consultations and certificates
+- **Box Salud Mental** — mental health (USIT) sessions
+- **Box Rehabilitación** — physiotherapy (kinesiología)
+
+Ready to start using SIGAS? Head to the [Quick Start guide](/quickstart) to log in and schedule your first appointment.

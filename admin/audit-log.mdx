@@ -1,0 +1,92 @@
+---
+title: "Audit Log: Track All Administrator Actions"
+sidebarTitle: "Audit Log"
+description: "The SIGAS audit log records every action taken by administrators — appointments, deletions, edits, and referrals — with timestamps and full details."
+---
+
+The Audit Log is your health center's tamper-evident record of every significant action performed inside SIGAS. Every time an administrator schedules an appointment, deletes a patient, creates a new account, or changes a specialist's profile, the system writes a timestamped entry to the log — recording exactly who did it, when, and what the full details were. Use the audit log to investigate incidents, verify that deletions were authorised, and maintain accountability across your administrative team.
+
+## Accessing the Module
+
+Navigate to **Panel Admin → Auditoría** from the main sidebar.
+
+---
+
+## What Gets Logged
+
+The following action codes appear in the audit log:
+
+| Action Code | Description |
+|-------------|-------------|
+| `AGENDAR` | Appointment scheduled (legacy format) |
+| `AGENDAR_CITA` | Patient appointment created |
+| `CITA_SOBRECUPO` | Overbooking appointment created |
+| `ELIMINAR` | Appointment deleted (legacy format) |
+| `ELIMINAR_CITA` | Appointment deleted |
+| `DERIVACION` | Mammography referral created |
+| `MAMOGRAFIA` | Mammography referral status changed |
+| `RESERVA_SALA` | Box/room reservation created |
+| `CREAR_ADMIN` | New administrator account created |
+| `EDITAR_ADMIN` | Administrator account edited |
+| `ELIMINAR_ADMIN` | Administrator account deleted |
+| `CREAR_ESP` | New specialist created |
+| `EDITAR_ESP` | Specialist edited |
+| `ELIMINAR_ESP` | Specialist deleted |
+| `ELIMINAR_PACIENTE` | Patient record deleted |
+
+<Note>
+  The audit log displays the **150 most recent entries**. Older records are preserved in the database but are not visible in the UI. If you need to retrieve older entries for compliance or investigation purposes, contact your system administrator to query the database directly.
+</Note>
+
+---
+
+## Reading the Audit Log
+
+The log table contains four columns:
+
+| Column | Description |
+|--------|-------------|
+| **Fecha y Hora** | The exact date and time the action was performed, in `DD/MM/YYYY HH:MM:SS` format |
+| **Administrador** | The full name and RUT of the administrator who performed the action |
+| **Acción** | A colour-coded badge showing the action code (e.g., `AGENDAR_CITA`, `ELIMINAR_PACIENTE`) |
+| **Detalle de la Operación** | A human-readable description of exactly what was done, including patient RUT, box number, appointment times, specialist names, and any other relevant identifiers |
+
+The detail field is the most useful column for investigations — it contains the full context of the operation so you can reconstruct exactly what happened without needing to cross-reference other parts of the system.
+
+---
+
+## Filtering by Action
+
+Use the **Filtrar Acción** dropdown at the top of the audit log page to narrow the view to a single action type. The filter applies immediately — the page reloads to show only entries matching the selected code.
+
+To return to the full log, click **Limpiar** or select **Todas las acciones** from the dropdown.
+
+<Tip>
+  If you need to investigate a specific incident, start by filtering on the relevant action type (e.g., `ELIMINAR_CITA` to see all deleted appointments, or `ELIMINAR_PACIENTE` to see patient record deletions). Then cross-reference the **Administrador** column and the **Fecha y Hora** to confirm who acted and when.
+</Tip>
+
+<Warning>
+  Audit log entries cannot be deleted or modified through the SIGAS interface. They provide a permanent, tamper-evident record of all system activity. No administrator — regardless of their permissions — can remove or alter a log entry.
+</Warning>
+
+---
+
+## Sample Audit Entry
+
+Below is an example of what a typical audit log entry looks like:
+
+| Field | Value |
+|-------|-------|
+| **Fecha y Hora** | 25/09/2026 09:05:12 |
+| **Administrador** | Administrador SIGAS *(RUT: 20375935-5)* |
+| **Acción** | `AGENDAR_CITA` |
+| **Detalle de la Operación** | Cita agendada para RUT 20375935-5 en Box 1 el 2026-09-25 (08:40 a 08:50) |
+
+In this example, the administrator with RUT `20375935-5` scheduled a new appointment for the patient with the same RUT, assigning them to Box 1 on 25 September 2026 in the 08:40–08:50 time slot. The detail field gives you enough information to locate the corresponding entry in the [Attendance History](/admin/attendance-history) and verify the appointment.
+
+---
+
+## Related Pages
+
+- [Attendance History](/admin/attendance-history) — view confirmed appointments filtered by date, box, or patient RUT
+- [Administrators](/admin/administrators) — manage who has access to SIGAS and can generate audit log entries
